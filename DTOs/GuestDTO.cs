@@ -19,6 +19,9 @@ namespace PruebaNET_JuanPabloGomezBustamante.DTOs
         public string IdentificationNumeber { get; set; }
 
         [Required]
+        public string PhoneNumber { get; set; }
+
+        [Required]
         public DateTime Birthdate { get; set; }
         
     }

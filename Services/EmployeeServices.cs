@@ -62,7 +62,6 @@ namespace PruebaNET_JuanPabloGomezBustamante.Services
         public async Task<IEnumerable<Employee>> GetAll()
         {
             return await _context.Employees.ToListAsync();
-
         }
         public async Task Update(Employee employee)
         {
@@ -94,7 +93,6 @@ namespace PruebaNET_JuanPabloGomezBustamante.Services
         public async Task<Employee?> GetById(int id)
         {
             return await _context.Employees.FindAsync(id);
-
         }
 
     }
