@@ -1,4 +1,3 @@
-// Add services to the container.
 using System.Text;
 using DotNetEnv;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -10,6 +9,7 @@ using PruebaNET_JuanPabloGomezBustamante.Data;
 
 Env.Load();
 
+// database protection
 var host = Environment.GetEnvironmentVariable("DB_HOST");
 var databaseName = Environment.GetEnvironmentVariable("DB_DATABASE");
 var port = Environment.GetEnvironmentVariable("DB_PORT");
@@ -20,7 +20,7 @@ var connectionString = $"server={host};port={port};database={databaseName};uid={
 
 var builder = WebApplication.CreateBuilder(args);
 
-// ACA CONECTAMOS CON NUESTRA BASE DE DATOS
+// data base connection
 builder.Services.AddDbContext<MyDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.Parse("8.0.20-mysql")));
 
@@ -28,7 +28,7 @@ builder.Services.AddDbContext<MyDbContext>(options =>
 // builder.Services.AddScoped<IUserRepository, UserServices>();
 // builder.Services.AddScoped<ICustomerRepository, CustomerService>();
 
-// ACA HABILITAMOS LA OPCION QUE NOS PERMITE USAR JWT
+// we enable the option that allows us to JWT
 builder.Services.AddSingleton<JWT>();
 builder.Services.AddAuthentication(config =>
 {
