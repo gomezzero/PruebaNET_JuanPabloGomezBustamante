@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using PruebaNET_JuanPabloGomezBustamante.Models;
+using PruebaNET_JuanPabloGomezBustamante.Seeders;
 
 namespace PruebaNET_JuanPabloGomezBustamante.Data
 {
@@ -18,6 +19,12 @@ namespace PruebaNET_JuanPabloGomezBustamante.Data
 
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options)
         {
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            DataSeeder.Seed(modelBuilder);
         }
     }
 }

@@ -29,7 +29,7 @@ namespace PruebaNET_JuanPabloGomezBustamante.Models
 
         // connection with foreign key
         [ForeignKey("room_type_id")]
-        public required RoomType RoomType { get; set; }
+        public RoomType? RoomType { get; set; }
 
         public Room(string roomNumber, double pricePerNight, bool availability, byte maxOccupancyPerson, int roomTypeId)
         {
