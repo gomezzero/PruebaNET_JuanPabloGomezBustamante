@@ -7,7 +7,7 @@ using PruebaNET_JuanPabloGomezBustamante.Utils;
 
 namespace PruebaNET_JuanPabloGomezBustamante.Controllers.V1.FreeAccess.Auth
 {
-    [Route("api/v1/free access/auth")]
+    [Route("api/v1/freeAccess/auth")]
     [ApiExplorerSettings(GroupName = "v1")]
     public class AuthController : ControllerBase
     {
@@ -40,7 +40,7 @@ namespace PruebaNET_JuanPabloGomezBustamante.Controllers.V1.FreeAccess.Auth
 
             var token = JWT.GenerateJwtToken(employee);
 
-            return Ok($"ACA ESTA SU TOKEN: {token}");
+            return Ok($"Token valido por 60 min: {token}");
         }
     }
 }
