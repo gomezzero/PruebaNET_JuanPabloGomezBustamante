@@ -1,9 +1,5 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PruebaNET_JuanPabloGomezBustamante.Models
 {
@@ -29,5 +25,14 @@ namespace PruebaNET_JuanPabloGomezBustamante.Models
 
         [Column("password")]
         public string Password { get; set; }
+
+        public Employee(string firstName, string lastName, string email, string identificationNumeber, string password)
+        {
+            FirstName = firstName.ToLower().Trim();
+            LastName = lastName.ToLower().Trim();
+            Email = email.ToLower().Trim();
+            IdentificationNumeber = identificationNumeber.Trim();
+            Password = password;
+        }
     }
 }
