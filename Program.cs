@@ -29,6 +29,7 @@ builder.Services.AddDbContext<MyDbContext>(options =>
 // Registrar IUserRepository con su implementación UserServices
 builder.Services.AddScoped<IEmployee, EmployeeServices>();
 builder.Services.AddScoped<IRoomsType, RoomsTypeService>();
+builder.Services.AddScoped<IRoom, RoomService>();
 
 
 

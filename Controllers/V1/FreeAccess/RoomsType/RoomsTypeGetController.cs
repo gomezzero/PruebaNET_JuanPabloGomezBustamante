@@ -17,7 +17,6 @@ namespace PruebaNET_JuanPabloGomezBustamante.Controllers.V1.RoomsTypes
     public class RoomsTypeGetController(IRoomsType roomsType) : RoomsTypeController(roomsType)
     {
         [HttpGet]
-        [Authorize]
         public async Task<ActionResult<IEnumerable<RoomType>>> GetAll()
         {
             var roomsType = await _roomsType.GetAll();
@@ -25,7 +24,6 @@ namespace PruebaNET_JuanPabloGomezBustamante.Controllers.V1.RoomsTypes
         }
 
         [HttpGet("serach/{keyword}")]
-        [Authorize]
         public async Task<ActionResult<IEnumerable<RoomType>>> SearchByKeyword(string keyword)
         {
             if (string.IsNullOrWhiteSpace(keyword))
@@ -41,6 +39,18 @@ namespace PruebaNET_JuanPabloGomezBustamante.Controllers.V1.RoomsTypes
             }
 
             return Ok(roomTypes);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<RoomType>> GetById(int id)
+        {
+            var roomsType = await _roomsType.GetById(id);
+
+            if (roomsType == null)
+            {
+                return NotFound();
+            }
+            return roomsType;
         }
     }
 }
