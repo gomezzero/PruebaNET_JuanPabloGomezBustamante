@@ -28,7 +28,9 @@ builder.Services.AddDbContext<MyDbContext>(options =>
 
 // Registrar IUserRepository con su implementación UserServices
 builder.Services.AddScoped<IEmployee, EmployeeServices>();
-// builder.Services.AddScoped<ICustomerRepository, CustomerService>();
+builder.Services.AddScoped<IRoomsType, RoomsTypeService>();
+
+
 
 // we enable the option that allows us to JWT
 builder.Services.AddSingleton<JWT>();
