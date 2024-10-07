@@ -6,6 +6,8 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using PruebaNET_JuanPabloGomezBustamante.Config;
 using PruebaNET_JuanPabloGomezBustamante.Data;
+using PruebaNET_JuanPabloGomezBustamante.Repositories;
+using PruebaNET_JuanPabloGomezBustamante.Services;
 
 Env.Load();
 
@@ -25,7 +27,7 @@ builder.Services.AddDbContext<MyDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.Parse("8.0.20-mysql")));
 
 // Registrar IUserRepository con su implementación UserServices
-// builder.Services.AddScoped<IUserRepository, UserServices>();
+builder.Services.AddScoped<IEmployee, EmployeeServices>();
 // builder.Services.AddScoped<ICustomerRepository, CustomerService>();
 
 // we enable the option that allows us to JWT

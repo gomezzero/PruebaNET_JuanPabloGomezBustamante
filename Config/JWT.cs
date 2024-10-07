@@ -20,7 +20,7 @@ namespace PruebaNET_JuanPabloGomezBustamante.Config
             var jwtAudience = Environment.GetEnvironmentVariable("JWT_AUDIENCE");
             var jwtExpiresIn = Environment.GetEnvironmentVariable("JWT_EXPIRES_IN");
 
-            // Validar que las variables existen
+            // Validate that the variables exist
             if (string.IsNullOrEmpty(jwtKey) || string.IsNullOrEmpty(jwtIssuer) || string.IsNullOrEmpty(jwtAudience))
             {
                 throw new InvalidOperationException("JWT configuration values are missing.");
