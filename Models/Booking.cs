@@ -22,24 +22,24 @@ namespace PruebaNET_JuanPabloGomezBustamante.Models
         public double TotalCost { get; set; }
 
         // foreign key
-        [Column("room_id")]
+        [Column("room_id1")]
         public int RoomId { get; set;}
 
-        [Column("guest_id")]
+        [Column("guest_id1")]
         public int GuestId { get; set; }
 
-        [Column("employee_id")]
+        [Column("employee_id1")]
         public int EmployeeId { get; set; }
 
         // connection with foreign key
-        [ForeignKey("room_id")]
-        public required Room Room { get; set; }
+        [ForeignKey("room_id1")]
+        public Room? Room { get; set; }
 
-        [ForeignKey("guest_id")]
-        public required Guest Guest { get; set; }
+        [ForeignKey("guest_id1")]
+        public Guest? Guest { get; set; }
 
-        [ForeignKey("employee_id")]
-        public required Employee Employee { get; set; }
+        [ForeignKey("employee_id1")]
+        public Employee? Employee { get; set; }
 
         public Booking(DateTime starDate, DateTime endDate, double totalCost, int roomId, int guestId, int employeeId)
         {

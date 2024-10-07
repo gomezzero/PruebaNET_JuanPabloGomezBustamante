@@ -1,0 +1,10 @@
+DB_HOST = b4gws0t6yx0wh8amc5vd-mysql.services.clever-cloud.com
+DB_PORT = 3306
+DB_DATABASE = b4gws0t6yx0wh8amc5vd
+DB_USERNAME = uhq40q5nqg7yjgw7
+DB_PASSOWORD = OKXYK0UsgAICsmhBH3LB
+
+JWT_KEY = UNA_ALMA_PURA_RESIDE_EN_UNA_MENTE_SANA_Y_EN_UN_CUERPO_SANO
+JWT_ISSUER = http://localhost:5183
+JWT_AUDIENCE = public
+JWT_EXPIRES_IN = 60

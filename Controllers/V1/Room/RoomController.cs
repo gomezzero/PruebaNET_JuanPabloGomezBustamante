@@ -9,7 +9,7 @@ using PruebaNET_JuanPabloGomezBustamante.Repositories;
 
 namespace PruebaNET_JuanPabloGomezBustamante.Controllers.V1.Rooms
 {
-    [Route("api/V1[controller]")]
+    [Route("api/V1/[controller]")]
     public class RoomController(IRoom rooms) : ControllerBase
     {
         protected readonly IRoom _rooms = rooms;

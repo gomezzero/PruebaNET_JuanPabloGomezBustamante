@@ -7,7 +7,7 @@ using PruebaNET_JuanPabloGomezBustamante.Utils;
 
 namespace PruebaNET_JuanPabloGomezBustamante.Controllers.V1.FreeAccess.Auth
 {
-    [Route("api/v1/freeAccess/auth")]
+    [Route("api/v1/auth")]
     [ApiExplorerSettings(GroupName = "v1")]
     public class AuthController : ControllerBase
     {

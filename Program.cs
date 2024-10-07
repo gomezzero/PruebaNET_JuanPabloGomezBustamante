@@ -31,6 +31,7 @@ builder.Services.AddScoped<IEmployee, EmployeeServices>();
 builder.Services.AddScoped<IRoomsType, RoomsTypeService>();
 builder.Services.AddScoped<IRoom, RoomService>();
 builder.Services.AddScoped<IGuest, GuestService>();
+builder.Services.AddScoped<IBooking, BookingService>();
 
 // we enable the option that allows us to JWT
 builder.Services.AddSingleton<JWT>();
